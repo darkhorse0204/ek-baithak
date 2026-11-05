@@ -1,0 +1,128 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ek Baithak architecture</title>
+<style>
+body{margin:0;background:#fff;font-family:"Segoe UI",system-ui,sans-serif}
+svg text{font-family:"Segoe UI",system-ui,sans-serif}
+.t{font-size:15px;font-weight:700;fill:#16181d}.s{font-size:12.5px;fill:#4a4f59}.xs{font-size:11.5px;fill:#4a4f59}
+.lane{font-size:13px;font-weight:700;letter-spacing:1.5px;fill:#8a909c}
+.n{font-size:12px;font-weight:800;fill:#fff}
+</style></head><body>
+<svg id="arch" width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a909c"/></marker>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e1121b"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#fff"/>
+<text x="40" y="44" style="font-size:26px;font-weight:800" fill="#16181d">Ek Baithak · solution architecture</text>
+<text x="40" y="70" class="s" style="font-size:14px">The AI listens and explains; plain code decides eligibility, price and KYC verdicts. Every AI step has a non-AI fallback.</text>
+
+<!-- lanes -->
+<text x="40" y="112" class="lane">CHANNELS</text>
+<text x="300" y="112" class="lane">EK BAITHAK PLATFORM (FastAPI · Python)</text>
+<text x="1270" y="112" class="lane">PEOPLE &amp; BACK OFFICE</text>
+<rect x="280" y="122" width="960" height="610" rx="18" fill="#fafbfc" stroke="#e7e8ec"/>
+
+<!-- channels -->
+<g>
+<rect x="40" y="130" width="210" height="92" rx="12" fill="#fff" stroke="#e1121b" stroke-width="2"/>
+<text x="56" y="156" class="t">Owner's phone (web app)</text><text x="56" y="176" class="xs">10 languages · tap, type or</text><text x="56" y="192" class="xs">voice note · works on 4G</text><text x="56" y="208" class="xs">One screen per step, ₹/day price</text>
+<rect x="40" y="236" width="210" height="76" rx="12" fill="#fff" stroke="#e7e8ec" stroke-width="2"/>
+<text x="56" y="262" class="t">WhatsApp</text><text x="56" y="282" class="xs">Cloud API webhook → same advisor</text><text x="56" y="298" class="xs">Buttons for chips, proactive updates</text>
+<rect x="40" y="326" width="210" height="76" rx="12" fill="#fff" stroke="#e7e8ec" stroke-width="2"/>
+<text x="56" y="352" class="t">Voice note</text><text x="56" y="372" class="xs">Gemini speech-to-text in the</text><text x="56" y="388" class="xs">owner's language; read-aloud replies</text>
+<rect x="40" y="416" width="210" height="76" rx="12" fill="#fff" stroke="#e7e8ec" stroke-width="2"/>
+<text x="56" y="442" class="t">Partner-assisted mode</text><text x="56" y="462" class="xs">Same journey on a partner's phone</text><text x="56" y="478" class="xs">for owners who want help</text>
+</g>
+
+<!-- advisor -->
+<rect x="300" y="138" width="440" height="270" rx="14" fill="#fff" stroke="#e7e8ec"/>
+<text x="318" y="164" class="t" style="font-size:16px">① Conversational advisor</text>
+<rect x="318" y="178" width="196" height="64" rx="10" fill="#fdecec"/><text x="330" y="200" class="t" style="font-size:13px">Listen (LLM)</text><text x="330" y="218" class="xs">Extract facts → JSON</text><text x="330" y="233" class="xs">Gemini 3.1/3.5 Flash-Lite</text>
+<rect x="526" y="178" width="196" height="64" rx="10" fill="#eef0f3"/><text x="538" y="200" class="t" style="font-size:13px">Dialogue policy (code)</text><text x="538" y="218" class="xs">Ask only what's missing:</text><text x="538" y="233" class="xs">type, city, size, GSTIN, needs</text>
+<rect x="318" y="254" width="404" height="74" rx="10" fill="#eef0f3"/><text x="330" y="276" class="t" style="font-size:13px">Recommender + rules engine (code, source of truth)</text>
+<text x="330" y="294" class="xs">25 products · city tier · min staff/sites · active GSTIN · dependencies</text><text x="330" y="310" class="xs">One price rule for all · budget-fit plan · blocked items explained + alternative</text>
+<rect x="318" y="340" width="196" height="54" rx="10" fill="#fdecec"/><text x="330" y="362" class="t" style="font-size:13px">Explain (LLM)</text><text x="330" y="380" class="xs">From structured reasons only</text>
+<rect x="526" y="340" width="196" height="54" rx="10" fill="#e6f5ec"/><text x="538" y="362" class="t" style="font-size:13px">Fallbacks</text><text x="538" y="380" class="xs">Model chain → keyword rules</text>
+
+<!-- KYC -->
+<rect x="760" y="138" width="460" height="270" rx="14" fill="#fff" stroke="#e7e8ec"/>
+<text x="778" y="164" class="t" style="font-size:16px">② Smart KYC: registry first, documents last</text>
+<g class="xs">
+<rect x="778" y="178" width="132" height="44" rx="8" fill="#eef0f3"/><text x="788" y="198" class="t" style="font-size:12px">Quality gate</text><text x="788" y="213" class="xs">blur · tilt → fix</text>
+<rect x="918" y="178" width="132" height="44" rx="8" fill="#eef0f3"/><text x="928" y="198" class="t" style="font-size:12px">Local OCR</text><text x="928" y="213" class="xs">RapidOCR, on-server</text>
+<rect x="1058" y="178" width="144" height="44" rx="8" fill="#eef0f3"/><text x="1068" y="198" class="t" style="font-size:12px">Field parser</text><text x="1068" y="213" class="xs">4 document types</text>
+<rect x="778" y="232" width="200" height="58" rx="8" fill="#eef0f3"/><text x="788" y="252" class="t" style="font-size:12px">Validators (code)</text><text x="788" y="268" class="xs">GSTIN check digit · bill ≤ 90 days</text><text x="788" y="282" class="xs">who may sign, by constitution</text>
+<rect x="988" y="232" width="214" height="58" rx="8" fill="#fdecec"/><text x="998" y="252" class="t" style="font-size:12px">AI second reader</text><text x="998" y="268" class="xs">Gemini vision, only when a hard</text><text x="998" y="282" class="xs">check fails; must agree to flag fraud</text>
+<rect x="778" y="300" width="424" height="40" rx="8" fill="#e6f5ec"/><text x="788" y="325" class="t" style="font-size:12px">APPROVED · FIX IN APP · NON-GST ONLY · REVIEW → 12/12 correct</text>
+<rect x="778" y="350" width="424" height="44" rx="8" fill="#fff" stroke="#e7e8ec"/><text x="788" y="370" class="xs">Owner sees one plain-language fix per issue (re-take photo, e-sign link to the</text><text x="788" y="385" class="xs">right partner/director, recent bill); compliance sees evidence + diffs.</text>
+</g>
+
+<!-- registries -->
+<rect x="300" y="424" width="300" height="140" rx="14" fill="#fff" stroke="#e7e8ec"/>
+<text x="318" y="450" class="t" style="font-size:16px">③ Registry adapters</text>
+<text x="318" y="474" class="s">GSTIN lookup · near-match finder</text><text x="318" y="494" class="s">Udyam lookup / search by name</text><text x="318" y="514" class="s">Entity Locker fetch (references, no copies)</text><text x="318" y="534" class="s">Fibre feasibility → 5G AirFiber bridge</text>
+<text x="318" y="554" class="xs" style="fill:#8a909c">Mock on case CSVs; prod: GSTN, Udyam, MeitY</text>
+
+<!-- orders -->
+<rect x="616" y="424" width="300" height="140" rx="14" fill="#fff" stroke="#e7e8ec"/>
+<text x="634" y="450" class="t" style="font-size:16px">④ Order, sign, pay, track</text>
+<text x="634" y="474" class="s">Pre-filled form · Aadhaar e-Sign</text><text x="634" y="494" class="s">Per-SIM self-KYC links (DoT rules)</text><text x="634" y="514" class="s">UPI one-time + AutoPay from month 2</text><text x="634" y="534" class="s">Instant products live day 0; installs</text><text x="634" y="554" class="s">scheduled; every change pushed</text>
+
+<!-- privacy -->
+<rect x="932" y="424" width="288" height="140" rx="14" fill="#fff" stroke="#e1121b" stroke-width="1.5"/>
+<text x="950" y="450" class="t" style="font-size:16px">⑤ Privacy layer (DPDP)</text>
+<text x="950" y="474" class="s">Purpose-wise consent receipts</text><text x="950" y="494" class="s">Images processed in memory, dropped</text><text x="950" y="514" class="s">IDs masked in logs &amp; staff screens</text><text x="950" y="534" class="s">Hash-chained audit log · My data:</text><text x="950" y="554" class="s">view · download · withdraw · erase</text>
+
+<!-- analytics -->
+<rect x="300" y="580" width="920" height="136" rx="14" fill="#fff" stroke="#e7e8ec"/>
+<text x="318" y="606" class="t" style="font-size:16px">⑥ Analytics on last quarter's 5,000 leads</text>
+<rect x="318" y="620" width="210" height="80" rx="10" fill="#eef0f3"/><text x="330" y="642" class="t" style="font-size:12.5px">Lead score</text><text x="330" y="660" class="xs">Logistic model, AUC 0.69</text><text x="330" y="675" class="xs">top 20% → 39% of activations</text><text x="330" y="690" class="xs">reasons shown per lead</text>
+<rect x="538" y="620" width="210" height="80" rx="10" fill="#eef0f3"/><text x="550" y="642" class="t" style="font-size:12.5px">Rescue queue</text><text x="550" y="660" class="xs">20 drop reasons → next action</text><text x="550" y="675" class="xs">3,518 leads, ~820 recoverable</text><text x="550" y="690" class="xs">digital vs partner owner</text>
+<rect x="758" y="620" width="210" height="80" rx="10" fill="#eef0f3"/><text x="770" y="642" class="t" style="font-size:12.5px">Funnel simulator</text><text x="770" y="660" class="xs">Assumptions as sliders</text><text x="770" y="675" class="xs">activation, CAC, days</text><text x="770" y="690" class="xs">base + conservative case</text>
+<rect x="978" y="620" width="224" height="80" rx="10" fill="#eef0f3"/><text x="990" y="642" class="t" style="font-size:12.5px">Bundle audit</text><text x="990" y="660" class="xs">56 of 368 sold bundles broke</text><text x="990" y="675" class="xs">a catalogue rule; the advisor</text><text x="990" y="690" class="xs">cannot (same rules engine)</text>
+
+<!-- people -->
+<rect x="1270" y="130" width="290" height="150" rx="12" fill="#fff" stroke="#e7e8ec" stroke-width="2"/>
+<text x="1286" y="156" class="t">Control room (sales & compliance)</text>
+<text x="1286" y="178" class="xs">Live journeys + chats the advisor</text><text x="1286" y="194" class="xs">couldn't close, scored and ranked</text><text x="1286" y="214" class="xs">Who to call · rescue queue · KYC</text><text x="1286" y="230" class="xs">review with evidence · simulator ·</text><text x="1286" y="246" class="xs">bundle audit · privacy log</text><text x="1286" y="266" class="xs" style="fill:#e1121b">Staff see masked identifiers only</text>
+<rect x="1270" y="296" width="290" height="132" rx="12" fill="#fff" stroke="#e7e8ec" stroke-width="2"/>
+<text x="1286" y="322" class="t">Channel partners &amp; field force</text>
+<text x="1286" y="344" class="xs">Install &amp; assist fee on every digital</text><text x="1286" y="360" class="xs">sale in their territory (no conflict)</text><text x="1286" y="380" class="xs">Get handoffs with full chat context</text><text x="1286" y="396" class="xs">Field force → multi-site &amp; factories</text><text x="1286" y="412" class="xs">where surveys are needed</text>
+<rect x="1270" y="444" width="290" height="120" rx="12" fill="#fff" stroke="#e7e8ec" stroke-width="2"/>
+<text x="1286" y="470" class="t">Owner, after purchase</text>
+<text x="1286" y="492" class="xs">Tracker + WhatsApp updates at each</text><text x="1286" y="508" class="xs">step → target 0 status calls</text><text x="1286" y="528" class="xs">One bill, one support number</text><text x="1286" y="548" class="xs">My data page for DPDP rights</text>
+
+<!-- data -->
+<text x="40" y="772" class="lane">DATA</text>
+<g>
+<rect x="40" y="784" width="1520" height="76" rx="12" fill="#16181d"/>
+<text x="64" y="815" style="font-size:14px;font-weight:700" fill="#fff">product_catalogue (25)</text><text x="64" y="836" style="font-size:12px" fill="#c9ccd3">rules + prices, read by code only</text>
+<text x="330" y="815" style="font-size:14px;font-weight:700" fill="#fff">smb_leads (5,000)</text><text x="330" y="836" style="font-size:12px" fill="#c9ccd3">CRM · model training · rescue</text>
+<text x="570" y="815" style="font-size:14px;font-weight:700" fill="#fff">GSTIN registry (3,534)</text><text x="570" y="836" style="font-size:12px" fill="#c9ccd3">status incl. cancelled/suspended</text>
+<text x="820" y="815" style="font-size:14px;font-weight:700" fill="#fff">Udyam registry (2,723)</text><text x="820" y="836" style="font-size:12px" fill="#c9ccd3">name · city · size</text>
+<text x="1050" y="815" style="font-size:14px;font-weight:700" fill="#fff">Sessions · orders · consents</text><text x="1050" y="836" style="font-size:12px" fill="#c9ccd3">KYC: verified fields + hashes, no images</text>
+<text x="1330" y="815" style="font-size:14px;font-weight:700" fill="#fff">Hosted in India</text><text x="1330" y="836" style="font-size:12px" fill="#c9ccd3">prod: paid, no-training AI tier</text>
+</g>
+
+<!-- arrows -->
+<g stroke="#e1121b" stroke-width="2.5" fill="none">
+<path d="M250 176 L298 200" marker-end="url(#ar)"/>
+<path d="M250 274 L298 240" marker-end="url(#ar)"/>
+<path d="M250 364 L298 300" marker-end="url(#ar)"/>
+<path d="M740 274 L758 274" marker-end="url(#ar)"/>
+<path d="M990 408 L990 422" marker-end="url(#ar)"/>
+<path d="M740 380 C760 400 760 410 766 422" marker-end="url(#ar)"/>
+</g>
+<g stroke="#8a909c" stroke-width="2" fill="none" stroke-dasharray="5 4">
+<path d="M450 408 L450 422" marker-end="url(#a)"/>
+<path d="M1220 200 L1268 200" marker-end="url(#a)"/>
+<path d="M1220 490 L1268 500" marker-end="url(#a)"/>
+<path d="M1220 640 C1245 640 1245 380 1268 380" marker-end="url(#a)"/>
+<path d="M1240 716 L1240 782" marker-end="url(#a)" marker-start="url(#a)"/>
+</g>
+<g>
+
+<text x="300" y="756" class="xs" style="font-size:12.5px">Flow: ① owner talks → ③ GSTIN pre-fills profile → ① rules build an eligible bundle with a ₹/day price → ⑤ consent → ② KYC → ④ e-sign, UPI, live same day.</text>
+</g>
+</svg>
+</body></html>

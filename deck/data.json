@@ -1,0 +1,425 @@
+{
+ "funnel": [
+  5000,
+  3406,
+  1974,
+  861,
+  588,
+  368
+ ],
+ "pct_prev": [
+  null,
+  0.681,
+  0.58,
+  0.436,
+  0.683,
+  0.626
+ ],
+ "days": 17.6,
+ "calls": 3.0,
+ "cac": 15053,
+ "churn": 0.152,
+ "gst": {
+  "with": 0.096,
+  "without": 0.02
+ },
+ "calls_vs_churn": [
+  {
+   "calls": 1,
+   "n": 34,
+   "churn": 0.059,
+   "nps": 7.5
+  },
+  {
+   "calls": 2,
+   "n": 84,
+   "churn": 0.143,
+   "nps": 7.2
+  },
+  {
+   "calls": 3,
+   "n": 137,
+   "churn": 0.117,
+   "nps": 6.9
+  },
+  {
+   "calls": 4,
+   "n": 70,
+   "churn": 0.2,
+   "nps": 6.7
+  },
+  {
+   "calls": 5,
+   "n": 43,
+   "churn": 0.279,
+   "nps": 6.0
+  }
+ ],
+ "by_segment": [
+  {
+   "segment": "Micro retail & services",
+   "short": "Micro retail",
+   "leads": 2709,
+   "activations": 110,
+   "activation_rate": 0.041,
+   "churn_6m": 0.227,
+   "median_mrr": 2470.0,
+   "nps": 7.0,
+   "cac_per_activation": 20007,
+   "payback_months": 8.0
+  },
+  {
+   "segment": "Professional offices",
+   "short": "Professional",
+   "leads": 1247,
+   "activations": 138,
+   "activation_rate": 0.111,
+   "churn_6m": 0.138,
+   "median_mrr": 6575.0,
+   "nps": 6.9,
+   "cac_per_activation": 10695,
+   "payback_months": 1.6
+  },
+  {
+   "segment": "Small manufacturers",
+   "short": "Manufacturers",
+   "leads": 289,
+   "activations": 37,
+   "activation_rate": 0.128,
+   "churn_6m": 0.081,
+   "median_mrr": 15910.0,
+   "nps": 6.5,
+   "cac_per_activation": 15324,
+   "payback_months": 0.8
+  },
+  {
+   "segment": "Small multi-site businesses",
+   "short": "Multi-site",
+   "leads": 755,
+   "activations": 83,
+   "activation_rate": 0.11,
+   "churn_6m": 0.108,
+   "median_mrr": 28080.0,
+   "nps": 6.7,
+   "cac_per_activation": 15614,
+   "payback_months": 0.5
+  }
+ ],
+ "by_source": [
+  {
+   "source": "Channel partner",
+   "leads": 1010,
+   "activations": 81,
+   "activation_rate": 0.08,
+   "cac_per_activation": 20851,
+   "churn_6m": 0.185
+  },
+  {
+   "source": "Field sales",
+   "leads": 1720,
+   "activations": 125,
+   "activation_rate": 0.073,
+   "cac_per_activation": 24335,
+   "churn_6m": 0.096
+  },
+  {
+   "source": "Inbound call",
+   "leads": 504,
+   "activations": 48,
+   "activation_rate": 0.095,
+   "cac_per_activation": 5113,
+   "churn_6m": 0.146
+  },
+  {
+   "source": "Referral",
+   "leads": 413,
+   "activations": 61,
+   "activation_rate": 0.148,
+   "cac_per_activation": 4099,
+   "churn_6m": 0.246
+  },
+  {
+   "source": "Website form",
+   "leads": 995,
+   "activations": 43,
+   "activation_rate": 0.043,
+   "cac_per_activation": 6352,
+   "churn_6m": 0.116
+  },
+  {
+   "source": "WhatsApp campaign",
+   "leads": 358,
+   "activations": 10,
+   "activation_rate": 0.028,
+   "cac_per_activation": 4026,
+   "churn_6m": 0.2
+  }
+ ],
+ "drop_groups": {
+  "Quote slow or confusing": 385,
+  "Paperwork & documents": 273,
+  "No time for a visit": 827,
+  "Install, feasibility, payment": 167
+ },
+ "friction_total": 1652,
+ "dropped_total": 4632,
+ "audit": {
+  "count": 63,
+  "bundles_affected": 56,
+  "by_rule": {
+   "min_employees": 8,
+   "city_tier": 24,
+   "gstin": 22,
+   "dependency": 9
+  },
+  "activated": 368
+ },
+ "bundles": {
+  "micro": {
+   "name": "Dukaan Starter",
+   "monthly": 1797,
+   "setup": 0,
+   "contract": 12,
+   "lines": [
+    "Biz Fibre 100",
+    "Business Postpaid 299 ×2"
+   ],
+   "addons": [
+    "Cloud POS & Billing"
+   ]
+  },
+  "micro_plus": {
+   "name": "Dukaan Plus",
+   "monthly": 4293,
+   "setup": 6100,
+   "contract": 12,
+   "lines": [
+    "Biz Fibre 100",
+    "Business Postpaid 299 ×2",
+    "WhatsApp Business API Starter",
+    "Cloud POS & Billing",
+    "Cloud CCTV ×2"
+   ],
+   "addons": []
+  },
+  "prof": {
+   "name": "Clinic & Office Pro",
+   "monthly": 7621,
+   "setup": 1000,
+   "contract": 12,
+   "lines": [
+    "Biz Fibre 300",
+    "Business Postpaid 599 ×2",
+    "Business SMS 10k",
+    "Cloud Email & Office Suite ×9",
+    "Cloud Backup 1 TB",
+    "Endpoint Security ×4",
+    "Secure Wi-Fi with Guest Network"
+   ],
+   "addons": [
+    "Backup 4G/5G Failover"
+   ]
+  },
+  "multi": {
+   "name": "Multi-site One",
+   "monthly": 32741,
+   "setup": 68000,
+   "contract": 24,
+   "lines": [
+    "Biz Fibre 300 ×5",
+    "Business Postpaid 599 ×4",
+    "Backup 4G/5G Failover ×5",
+    "Managed SD-WAN ×5",
+    "Cloud Email & Office Suite ×7",
+    "Cloud POS & Billing ×5",
+    "Secure Wi-Fi with Guest Network ×5",
+    "Cloud CCTV ×10"
+   ],
+   "addons": [
+    "Managed Firewall"
+   ]
+  },
+  "mfg": {
+   "name": "Factory Connect",
+   "monthly": 15426,
+   "setup": 51200,
+   "contract": 24,
+   "lines": [
+    "Internet Leased Line 20",
+    "Business Postpaid 599 ×3",
+    "Cloud Email & Office Suite ×6",
+    "Endpoint Security ×6",
+    "Managed Firewall",
+    "Cloud CCTV ×4",
+    "Machine Monitoring IoT ×10"
+   ],
+   "addons": [
+    "Cloud Backup 1 TB"
+   ]
+  }
+ },
+ "median_mrr": 6900.0,
+ "mean_mrr": 12350.516304347826,
+ "sim": {
+  "base": [
+   5000,
+   3486,
+   2360,
+   1288,
+   1056,
+   797
+  ],
+  "cons": [
+   5000,
+   3446,
+   2165,
+   1063,
+   799,
+   552
+  ],
+  "today": [
+   5000,
+   3406,
+   1974,
+   861,
+   588,
+   368
+  ],
+  "cac_base": 4245,
+  "cac_cons": 5729,
+  "act_base": 0.159,
+  "act_cons": 0.11
+ },
+ "arr_extra_base_cr": 3.0,
+ "arr_extra_cons_cr": 1.3,
+ "model": {
+  "auc": 0.694,
+  "top20": 0.391
+ },
+ "rescue": {
+  "total": 3518,
+  "by_owner": [
+   {
+    "owner": "digital",
+    "leads": 2844,
+    "expected_recovered": 761.0,
+    "expected_mrr": 5541453.0
+   },
+   {
+    "owner": "partner",
+    "leads": 674,
+    "expected_recovered": 62.0,
+    "expected_mrr": 453239.0
+   }
+  ],
+  "expected_recovered": 823,
+  "expected_mrr": 5994692
+ },
+ "kyc": [
+  {
+   "id": "K01",
+   "verdict": "RESTRICTED",
+   "business": "Vindhya Tours & Travels",
+   "issues": [
+    "The GST registry shows this GSTIN as CANCELLED.",
+    "The registration number is blank on the Udyam certificate and no registry record matches."
+   ],
+   "auto": []
+  },
+  {
+   "id": "K02",
+   "verdict": "APPROVED",
+   "business": "Harmony Dental Care",
+   "issues": [],
+   "auto": [
+    "Straightened a 7° tilt automatically before reading."
+   ]
+  },
+  {
+   "id": "K03",
+   "verdict": "APPROVED",
+   "business": "Ganesh Woodcraft",
+   "issues": [],
+   "auto": []
+  },
+  {
+   "id": "K04",
+   "verdict": "ACTION_NEEDED",
+   "business": "Saffron Dental Care LLP",
+   "issues": [
+    "Image is too blurry to read (sharpness 1.0, needs ≥ 60)."
+   ],
+   "auto": []
+  },
+  {
+   "id": "K05",
+   "verdict": "ACTION_NEEDED",
+   "business": "Balaji Realty LLP",
+   "issues": [
+    "For a Limited Liability Partnership the signatory must be authorised by the firm; ID shows designation 'Owner'."
+   ],
+   "auto": [
+    "Not uploaded; fetched UDYAM-KL-00-5521886 (Balaji Realty LLP) from the Udyam registry instead."
+   ]
+  },
+  {
+   "id": "K06",
+   "verdict": "REVIEW",
+   "business": "Saffron Unisex Salon",
+   "issues": [
+    "GSTIN on the certificate (08YKZXS8189L1Z0) fails the check digit: it was mistyped or edited. Registry has 08YKZXS5189L1ZO (Pooja Shah (Prop. Saffron Unisex Salon)), position 8: certificate '8', registry '5'."
+   ],
+   "auto": []
+  },
+  {
+   "id": "K07",
+   "verdict": "REVIEW",
+   "business": "Neelgiri Physio Clinic",
+   "issues": [
+    "Certificate legal name 'Neha Banerjee (Prop. Shri Physio Clinic)' differs from the registry 'Neha Banerjee (Prop. Neelgiri Physio Clinic)'."
+   ],
+   "auto": []
+  },
+  {
+   "id": "K08",
+   "verdict": "APPROVED",
+   "business": "Green Leaf Legal Associates",
+   "issues": [],
+   "auto": []
+  },
+  {
+   "id": "K09",
+   "verdict": "APPROVED",
+   "business": "Kaveri Insurance Advisors",
+   "issues": [],
+   "auto": []
+  },
+  {
+   "id": "K10",
+   "verdict": "ACTION_NEEDED",
+   "business": "Kaveri Stays LLP",
+   "issues": [
+    "For a Limited Liability Partnership the signatory must be authorised by the firm; ID shows designation 'Owner'.",
+    "The application came from Fatima Menon, but the signatory ID is for Nisha Arora."
+   ],
+   "auto": []
+  },
+  {
+   "id": "K11",
+   "verdict": "ACTION_NEEDED",
+   "business": "Trinity Bake House Pvt Ltd",
+   "issues": [
+    "Bill dated 2025-10-31 is 257 days old (limit 90).",
+    "For a Private Limited Company the signatory must be authorised by the firm; ID shows designation 'Owner'."
+   ],
+   "auto": []
+  },
+  {
+   "id": "K12",
+   "verdict": "APPROVED",
+   "business": "Star Electronics",
+   "issues": [],
+   "auto": []
+  }
+ ]
+}

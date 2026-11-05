@@ -1,0 +1,75 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Ek Baithak · Privacy and security note</title>
+<style>
+@page { size: A4; margin: 0; }
+body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; color: #16181d; font-size: 8.7pt; line-height: 1.3; }
+.page { width: 210mm; height: 297mm; padding: 10mm 12mm 8mm; box-sizing: border-box; position: relative; }
+.top { border-bottom: 3px solid #e1121b; padding-bottom: 5px; margin-bottom: 7px; display: flex; justify-content: space-between; align-items: end; }
+h1 { font-size: 17pt; margin: 0; } .sub { color: #4a4f59; font-size: 9pt; }
+h2 { font-size: 10pt; margin: 6px 0 2px; color: #b10c13; }
+p { margin: 2px 0 4px; }
+table { width: 100%; border-collapse: collapse; font-size: 7.9pt; margin: 2px 0 4px; }
+th { text-align: left; background: #f4f5f7; padding: 3px 5px; border-bottom: 1px solid #d9dbe0; }
+td { padding: 3px 5px; border-bottom: 1px solid #eceef1; vertical-align: top; }
+ul { margin: 2px 0 4px 16px; padding: 0; } li { margin: 1px 0; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.box { background: #fdecec; border-radius: 6px; padding: 5px 8px; margin: 4px 0; }
+.foot { position: absolute; bottom: 7mm; left: 13mm; right: 13mm; font-size: 7.6pt; color: #8a909c; border-top: 1px solid #e7e8ec; padding-top: 3px; }
+b.r { color: #b10c13; }
+</style></head><body><div class="page">
+<div class="top"><div><h1>Ek Baithak · Data privacy &amp; security note</h1>
+<div class="sub">Accel Business digital onboarding for MSMEs · built to the DPDP Act 2023 and DPDP Rules 2025</div></div>
+<div class="sub" style="text-align:right">YTL Hackathon 2026 · Track A</div></div>
+
+<div class="box"><b>Design rule: collect less, keep less, show everything.</b> The DPDP Rules were notified on 13 Nov 2025; consent-manager rules apply from Nov 2026 and the core
+Data Fiduciary duties (notice, consent, security, breach reporting, retention, rights) from 13 May 2027. Ek Baithak meets those duties today, so Accel does not need to re-engineer later.</div>
+
+<h2>1. What we collect, why, and for how long</h2>
+<table><tr><th style="width:24%">Data</th><th style="width:30%">Purpose (and only this purpose)</th><th style="width:20%">Legal basis</th><th>Retention</th></tr>
+<tr><td>Business profile: type, city, size, needs</td><td>Recommend an eligible bundle and price</td><td>Consent (s.6)</td><td>90 days if no order; then deleted</td></tr>
+<tr><td>GSTIN, legal name, address, constitution</td><td>Eligibility (GST-only products) and KYC</td><td>Legal obligation (DoT KYC)</td><td>Life of the connection + period set by the DoT licence</td></tr>
+<tr><td>Document images (GST, Udyam, bill, ID)</td><td>Read fields once (OCR) and verify</td><td>Legal obligation</td><td><b class="r">Never stored.</b> Processed in memory and dropped; we keep verified fields + a SHA-256 hash</td></tr>
+<tr><td>Entity Locker / registry records</td><td>Replace uploads with issuer-verified data</td><td>Consent (optional)</td><td>Reference (URI + hash) only, no copy</td></tr>
+<tr><td>Signatory name, ID number</td><td>Telecom KYC and e-sign</td><td>Legal obligation</td><td>As KYC record; masked on every staff screen</td></tr>
+<tr><td>Voice notes</td><td>Speech-to-text for the advisor</td><td>Consent</td><td>Audio dropped after transcription</td></tr>
+<tr><td>Mobile / WhatsApp number</td><td>Order updates (so owners never have to call)</td><td>Consent (optional)</td><td>Until live + 90 days</td></tr>
+<tr><td>Marketing preferences</td><td>New offers</td><td>Consent, <b>off by default</b></td><td>Until withdrawn</td></tr></table>
+
+<div class="cols"><div>
+<h2>2. Consent that people can actually read</h2>
+<ul>
+<li>Notice shown <b>before</b> KYC, standalone (Rule 3), in the owner's language (10 Indian languages), one line per purpose.</li>
+<li>Required purposes (KYC, installation) are separated from optional ones (registry fetch, WhatsApp, marketing); nothing optional is pre-ticked except service updates the owner can switch off.</li>
+<li>Every consent gets a receipt ID + hash, versioned notice, timestamp and language. Format is ready for registered Consent Managers.</li>
+<li><b>Withdraw as easily as you gave:</b> one tap in "My data", with the effect explained.</li>
+</ul>
+<h2>3. Data minimisation by design</h2>
+<ul>
+<li><b>Registry first, documents last:</b> a GSTIN pre-fills name, address and constitution; Entity Locker replaces the GST and Udyam uploads. Typical owner uploads drop from 4 to 1 (a recent bill), and identity is confirmed by Aadhaar OTP at signing instead of an ID photo.</li>
+<li>The advisor asks only for what changes the bundle (type, city, size, sites, needs). No date of birth, no PAN, no bank details.</li>
+<li>Partners see only the installation address, contact name and a masked phone number; their access ends 7 days after installation.</li>
+<li>Back-office and logs show masked identifiers (27PZ••••••••1ZH); full values only to the KYC role.</li>
+</ul>
+</div><div>
+<h2>4. AI and third parties</h2>
+<ul>
+<li><b>OCR runs on our own server</b> (RapidOCR); documents are not sent to any AI service to be read.</li>
+<li>An AI "second reader" sees a document <b>only</b> when a hard check fails (e.g. GSTIN check digit) and is never the sole basis for a decision. Eligibility, price and KYC verdicts are plain code with tests (12/12 specimen applicants correct).</li>
+<li>Chat AI receives the conversation and catalogue, not documents. The prototype uses Gemini's free tier on synthetic data; production uses a paid, no-training enterprise tier in an Indian region, under a Data Processing Agreement.</li>
+<li>No data goes to model providers hosted outside approved regions.</li>
+</ul>
+<h2>5. Security controls</h2>
+<ul>
+<li>TLS in transit; AES-256 at rest (prod); secrets in environment variables, never in code or logs.</li>
+<li>Role-based access: owner, partner, sales, KYC reviewer, auditor.</li>
+<li><b>Tamper-evident audit log</b>: every access, consent, KYC decision and erasure is hash-chained and kept at least one year (Rule 6).</li>
+<li>Fraud defence: check digit, registry near-match finder (caught an altered GSTIN), two independent readers must agree before flagging tampering, human review for anything flagged.</li>
+<li>Breach response: contain, inform affected owners and the Data Protection Board without delay, detailed report within 72 hours.</li>
+</ul>
+<h2>6. Owner rights, built into the app</h2>
+<ul>
+<li>"My data" shows everything held, why and until when; download as a file; correct details; erase (we explain what the telecom licence obliges us to keep); grievance answered well within the 90-day limit.</li>
+</ul>
+</div></div>
+<div class="foot">Ek Baithak prototype · statements about production describe the intended deployment. The legal timeline is from the notified DPDP Rules 2025 (G.S.R. 846(E)) and law-firm summaries; confirm against the Gazette before relying on it.</div>
+</div></body></html>

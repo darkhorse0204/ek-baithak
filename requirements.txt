@@ -1,0 +1,17 @@
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+pydantic>=2.6
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.4
+scipy>=1.12
+scikit-image>=0.22
+pillow>=10.2
+rapidocr-onnxruntime>=1.3
+# tests and tooling
+pytest>=8.0
+playwright>=1.42      # UI tour + screenshots (uses your installed Chrome)
+python-pptx>=1.0      # deck builder
+matplotlib>=3.8       # deck charts
+pymupdf>=1.24
