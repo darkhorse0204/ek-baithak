@@ -24,7 +24,6 @@ Open **http://localhost:8000**. On a laptop you get the owner's phone (left) nex
 
 Start-up takes a few seconds (the specimen documents ship pre-read in `data/ocr_cache_seed.json`). Use `reset_demo.bat` to clear old chats before a demo.
 
-**Step-by-step guide for running, recording the demo video and submitting: [HOW_TO_RUN_AND_RECORD.md](HOW_TO_RUN_AND_RECORD.md).**
 
 ## What's inside
 
