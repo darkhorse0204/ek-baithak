@@ -2,7 +2,7 @@
 
 **YTL Hackathon 2026 · Track A · Project Udyam Digital** (fictional operator: Accel Business)
 
-**Demo video (2 min 41 s):** https://drive.google.com/file/d/1Ho5gl_mTiw0q22HQnWRdzY6kNB6TKGQd/view?usp=sharing  
+**Demo video (2 min 41 s):** [▶ Watch on Google Drive](https://drive.google.com/file/d/1Ho5gl_mTiw0q22HQnWRdzY6kNB6TKGQd/view?usp=sharing)  
 **Team:** Ansh Jerath and Shivani Jogiya
 
 An AI advisor that lets a small-business owner discover the right bundle, buy it and get activated **in one sitting**, on a phone, in **10 Indian languages**, by typing, tapping or sending a voice note. The AI listens and explains. Plain, tested code decides what can be sold, what it costs, and whether KYC passes.
